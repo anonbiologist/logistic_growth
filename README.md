@@ -20,7 +20,7 @@ ggplot(aes(t,N), data = growth_data) +
   ylab("y") +
   theme_bw()
 ```
-The population growth is exponential and a logistical growth curve is observed. Therefore, the next step is to perform a log transformation. 
+The population growth is exponential and a logistic growth curve is observed. Therefore, the next step is to perform a log transformation. 
 ```{r}
 ggplot(aes(t,N), data = growth_data) +
   geom_point() +
@@ -67,11 +67,11 @@ summary(model2)
 
 3. Plot the data and model
 
-Load the data
+Load the data.
 ```{r}
 growth_data <- read.csv("experiment1.csv")
 ```
-Define a function for logistic growth
+Define a function for logistic growth.
 ```{r}
 logistic_fun <- function(t) {
   N <- (N0*K*exp(r*t))/(K-N0+N0*exp(r*t))
@@ -99,8 +99,7 @@ ggplot(aes(t,N), data = growth_data) +
 
 # QUESTION 2
 
-Calculate the population size at t = 4980 minutes, assuming that the population grows exponentially.
-
+_Calculate the population size at t = 4980 minutes, assuming that the population grows exponentially._
 
 Define a function for exponential growth:
 ```{r}
@@ -109,13 +108,13 @@ exponential_fun <- function(N0, r, t) {
   return(N)
 }
 ```
-Define the values
+Define the values for initial population size, initial population growth rate, and time.
 ```{r}
 N0 <- 986.5074723
 r <- 0.0100086
 t <- 4980
 ```
-Calculate population size at t = 4980 minutes for exponential growth
+Calculate population size at t = 4980 minutes for the exponential growth model.
 ```{r}
 population_exp <- exponential_fun(N0, r, t)
 ```
@@ -128,8 +127,53 @@ Therefore, the exponential growth model produced a far greater population size. 
 
 The crucial difference between the two models is that carrying capacity (K) is only considered in the logistic growth model, whereas exponential growth does not consider limiting factors upon population size and therefore models infinite growth.
 
+# Question 3
 
+Install ggplot2 package and load the growth data.
 
+```{r}
+install.packages("ggplot2")
+library(ggplot2)
+
+growth_data <- read.csv("experiment1.csv")
+```
+Define the logistic growth function.
+```{r}
+# Define logistic growth function
+logistic_fun <- function(t) {
+  N <- (N0*K*exp(r*t))/(K-N0+N0*exp(r*t))
+  return(N)
+}
+```
+Define the exponential growth function.
+```{r}
+exponential_fun <- function(t) {
+  N <- N0*exp(r*t)
+  return(N)
+}
+```
+Define the population parameters.
+```{r}
+N0 <- 986.5074723 
+r <- 0.0100086 
+K <- 6.00e+10
+```
+Create a plot to compare logistic and exponential models.
+```{r}
+# Create a plot to compare logistic and exponential models
+
+ggplot(aes(t, N), data = growth_data) +
+  geom_function(fun = logistic_fun, aes(colour = "Logistic")) +
+  geom_function(fun = exponential_fun, aes(colour = "Exponential")) +
+  ylim(0, 6.00e+10) +
+  xlim(0, 3511) +
+  labs(title = "Comparison of Logistic and Exponential Growth Models",
+       x = "Time",
+       y = "Population") +
+  scale_color_manual(values = c(Logistic = "red", Exponential = "blue"), name = "Growth Model") +
+  theme_minimal()
+```
+![Logistic vs Exponential plot](https://github.com/anonbiologist/logistic_growth/assets/153086380/f6116643-f295-4ffb-affc-39d64fd50941)
 
 
 
