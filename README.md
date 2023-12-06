@@ -160,8 +160,6 @@ K <- 6.00e+10
 ```
 Create a plot to compare logistic and exponential models.
 ```{r}
-# Create a plot to compare logistic and exponential models
-
 ggplot(aes(t, N), data = growth_data) +
   geom_function(fun = logistic_fun, aes(colour = "Logistic")) +
   geom_function(fun = exponential_fun, aes(colour = "Exponential")) +
