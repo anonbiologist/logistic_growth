@@ -7,7 +7,7 @@ library(ggplot2)
 
 growth_data <- read.csv("experiment1.csv")
 ```
-Using ggplot, plot population size against time, to observe how the population of _E. coli._ changed over time.
+Using ggplot, plot population size over time, to observe the pattern of growth for the population of _E. coli._ 
 ```{r}
 install.packages("ggplot2")
 library(ggplot2)
@@ -78,9 +78,9 @@ logistic_fun <- function(t) {
 ```
 Define the values for initial population size, initial population growth rate, and carrying capacity.
 ```{r}
-N0 <- 6.8941709 #
-r <- 0.0100086 #
-K <- 6.00e+10 #
+N0 <- 6.8941709 
+r <- 0.0100086 
+K <- 6.00e+10 
 ```
 Plot the data and a logistic model based on the calculated population metrics, to see how well the model fits the real data.
 ```{r}
