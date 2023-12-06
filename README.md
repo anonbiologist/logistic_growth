@@ -120,10 +120,12 @@ Calculate population size at t = 4980 minutes for exponential growth
 population_exp <- exponential_fun(N0, r, t)
 ```
 
-Population size for exponential growth = 4.370846e+24
-Population size for logistic growth = 6.00e+10
+- Population size for exponential growth = 4.370846e+24
 
-Therefore, the exponential growth model produced a far greater population size.. This is unsurprising, as by t = 4980 minutes, population growth had plateaued for the logistic model. 
+- Population size for logistic growth = 6.00e+10
+
+Therefore, the exponential growth model produced a far greater population size. This is unsurprising, as by t = 4980 minutes, population growth had plateaued for the logistic model. 
+
 The crucial difference between the two models is that carrying capacity (K) is only considered in the logistic growth model, whereas exponential growth does not consider limiting factors upon population size and therefore models infinite growth.
 
 
