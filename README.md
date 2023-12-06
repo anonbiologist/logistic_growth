@@ -65,7 +65,7 @@ summary(model2)
 
 
 
-3. Plot the data and model
+3. Plot the data and logistic model
 
 Load the data.
 ```{r}
