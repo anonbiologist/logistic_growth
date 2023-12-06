@@ -171,7 +171,7 @@ ggplot(aes(t, N), data = growth_data) +
   scale_color_manual(values = c(Logistic = "red", Exponential = "blue"), name = "Growth Model") +
   theme_minimal()
 ```
-![Logistic vs Exponential plot](https://github.com/anonbiologist/logistic_growth/assets/153086380/f6116643-f295-4ffb-affc-39d64fd50941)
 
+![Logistic vs Exponential plot](https://github.com/anonbiologist/logistic_growth/assets/153086380/da1e37a2-189a-453b-8f96-d5928bf92452)
 
 
