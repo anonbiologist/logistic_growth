@@ -1,4 +1,7 @@
+
+```{r}
 # Script to plot the logistic growth data
+
 
 growth_data <- read.csv("experiment1.csv")
 
@@ -25,8 +28,10 @@ ggplot(aes(t,N), data = growth_data) +
   
   scale_y_continuous(trans='log10')
 
+```
 
 
+```{r}
 # Script to estimate the model parameters using a linear approximation
 
 #Install and load packages
@@ -49,6 +54,9 @@ data_subset2 <- growth_data %>% filter(t>2500)
 model2 <- lm(N ~ 1, data_subset2)
 summary(model2)
 
+```
+
+```{r}
 
 # Script to plot data and model
 
@@ -65,7 +73,7 @@ logistic_fun <- function(t) {
 N0 <- 6.8941709 #
   
 r <- 0.0100086 #
-  
+
 K <- 6.00e+10 #
 
 ggplot(aes(t,N), data = growth_data) +
@@ -74,3 +82,5 @@ ggplot(aes(t,N), data = growth_data) +
   
   geom_point() +
   scale_y_continuous(trans='log10')
+
+```
