@@ -1,3 +1,5 @@
+# QUESTION 1
+
 1. Plot the logistic growth data
 
 Load the ggplot2 package and the simulated data for a logistic growth curve of _Escherichia coli._ 
@@ -78,10 +80,11 @@ logistic_fun <- function(t) {
 ```
 Define the values for initial population size, initial population growth rate, and carrying capacity.
 ```{r}
-N0 <- 6.8941709 
+N0 <- 986.5074723
 r <- 0.0100086 
 K <- 6.00e+10 
 ```
+
 Plot the data and a logistic model based on the calculated population metrics, to see how well the model fits the real data.
 ```{r}
 ggplot(aes(t,N), data = growth_data) + 
@@ -89,3 +92,40 @@ ggplot(aes(t,N), data = growth_data) +
   geom_point() +
   scale_y_continuous(trans='log10')
 ```
+
+
+
+# QUESTION 2
+
+Calculate the population size at t = 4980 minutes, assuming that the population grows exponentially.
+
+
+Define a function for exponential growth:
+```{r}
+exponential_fun <- function(N0, r, t) {
+  N <- N0 * exp(r * t)
+  return(N)
+}
+```
+Define the values
+```{r}
+N0 <- 986.5074723
+r <- 0.0100086
+t <- 4980
+```
+Calculate population size at t = 4980 minutes for exponential growth
+```{r}
+population_exp <- exponential_fun(N0, r, t)
+```
+
+Population size for exponential growth = 4.370846e+24
+Population size for logistic growth = 6.00e+10
+
+Therefore, the exponential growth model produced a far greater population size.. This is unsurprising, as by t = 4980 minutes, population growth had plateaued for the logistic model. 
+The crucial difference between the two models is that carrying capacity (K) is only considered in the logistic growth model, whereas exponential growth does not consider limiting factors upon population size and therefore models infinite growth.
+
+
+
+
+
+
