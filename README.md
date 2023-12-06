@@ -92,7 +92,7 @@ ggplot(aes(t,N), data = growth_data) +
   geom_point() +
   scale_y_continuous(trans='log10')
 ```
-[logistic growth model](https://github.com/anonbiologist/logistic_growth/assets/153086380/e7279d91-ee2a-44d8-8329-9005eda8d34c)
+![logistic growth model](https://github.com/anonbiologist/logistic_growth/assets/153086380/472531cc-1498-4ba8-9619-c94be4aafefb)
 
 
 
