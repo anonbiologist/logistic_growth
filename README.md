@@ -44,7 +44,7 @@ growth_data <- read.csv("experiment1.csv")
 
 Log transform the data in order to apply a linear model. 
 
-To calculate N0 and r, subset the data by time to only include data from before the population began to grow significantly in size.
+To calculate N0 and r, subset the data by time to only include data points from before the population began to grow significantly in size.
 ```{r}
 #Case 1. K >> N0, t is small
 
