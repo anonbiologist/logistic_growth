@@ -20,7 +20,7 @@ ggplot(aes(t,N), data = growth_data) +
   ylab("y") +
   theme_bw()
 ```
-The population growth is exponential and a logistic growth curve is observed. Therefore, the next step is to perform a log transformation. 
+A logistic growth curve is observed. Therefore, the next step is to perform a log transformation. 
 ```{r}
 ggplot(aes(t,N), data = growth_data) +
   geom_point() +
